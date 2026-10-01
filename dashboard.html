@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h2>Disaster Management System</h2>
+
+    <nav>
+        <a href="#" onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<div class="dashboard">
+
+    <h1 id="welcome">Welcome</h1>
+    <p id="role"></p>
+
+
+    <!-- USER -->
+
+    <div id="userSection">
+
+        <h2>User / Citizen Dashboard</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Report a Disaster</h3>
+
+                <form id="reportForm">
+
+                    <input type="text" id="disasterType"
+                           placeholder="Disaster type" required>
+
+                    <input type="text" id="location"
+                           placeholder="Location" required>
+
+                    <textarea id="details"
+                              placeholder="Enter disaster details"
+                              required></textarea>
+
+                    <button type="submit">Report Disaster</button>
+
+                </form>
+
+                <p id="reportMessage"></p>
+            </div>
+
+
+            <div class="card">
+
+                <h3>Request Help</h3>
+
+                <form id="helpForm">
+
+                    <input type="text" id="helpLocation"
+                           placeholder="Your location" required>
+
+                    <textarea id="helpDetails"
+                              placeholder="Describe the help required"
+                              required></textarea>
+
+                    <button type="submit">Request Help</button>
+
+                </form>
+
+                <p id="helpMessage"></p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Disaster Information</h3>
+
+                <div id="reports">
+                    No reports available.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- VOLUNTEER -->
+
+    <div id="volunteerSection">
+
+        <h2>Volunteer Dashboard</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Disaster Locations</h3>
+
+                <p>
+                    View locations where assistance
+                    is required.
+                </p>
+
+                <button onclick="showMessage('Volunteer locations displayed.')">
+                    View Locations
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>Assigned Tasks</h3>
+
+                <p>
+                    View tasks assigned by the admin.
+                </p>
+
+                <button onclick="showMessage('Task status updated.')">
+                    Update Task
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>Provide Assistance</h3>
+
+                <p>
+                    Provide assistance to affected people
+                    during disaster situations.
+                </p>
+
+                <button onclick="showMessage('Assistance updated successfully.')">
+                    Provide Assistance
+                </button>
+            </div>
+
+        </div>
+
+        <p id="volunteerMessage"></p>
+
+    </div>
+
+
+    <!-- ADMIN -->
+
+    <div id="adminSection">
+
+        <h2>Admin Dashboard</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Reported Disasters</h3>
+
+                <p>
+                    View disaster reports submitted by users.
+                </p>
+
+                <button onclick="showAdminReports()">
+                    View Reports
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>Affected Areas</h3>
+
+                <p>
+                    Manage areas affected by disasters.
+                </p>
+
+                <button onclick="showMessage('Affected areas section opened.')">
+                    Manage Areas
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>Resources</h3>
+
+                <p>
+                    Manage relief materials and resources.
+                </p>
+
+                <button onclick="showMessage('Resource section opened.')">
+                    Manage Resources
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>Volunteers</h3>
+
+                <p>
+                    View and coordinate registered volunteers.
+                </p>
+
+                <button onclick="showVolunteers()">
+                    Manage Volunteers
+                </button>
+            </div>
+
+
+            <div class="card">
+
+                <h3>Update Disaster Status</h3>
+
+                <select id="status">
+                    <option>Reported</option>
+                    <option>Under Action</option>
+                    <option>Assistance Provided</option>
+                    <option>Resolved</option>
+                </select>
+
+                <button onclick="updateStatus()">
+                    Update Status
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="card admin-info">
+            <h3>Admin Information</h3>
+            <div id="adminInfo">
+                Admin can manage reports, resources,
+                affected areas and volunteers.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
