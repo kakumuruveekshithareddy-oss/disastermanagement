@@ -1,83 +1,385 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Disaster Management System</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-<header>
-    <h2>Disaster Management System</h2>
+<!-- ================= HEADER ================= -->
+
+<header class="main-header">
+
+    <div class="logo-area">
+
+        <div class="logo-icon">
+            🚨
+        </div>
+
+        <div>
+            <h2>Disaster Management</h2>
+            <span>Emergency Support System</span>
+        </div>
+
+    </div>
+
 
     <nav>
-        <a href="#" onclick="logout()">Logout</a>
+
+        <a href="dashboard.html">
+            Home
+        </a>
+
+        <a href="login.html" id="loginLink">
+            Login
+        </a>
+
+        <a href="register.html" id="registerLink">
+            Register
+        </a>
+
+        <a href="#" id="logoutLink" onclick="logout()">
+            Logout
+        </a>
+
     </nav>
+
 </header>
+
+
+
+<!-- ================= MAIN DASHBOARD ================= -->
 
 <div class="dashboard">
 
-    <h1 id="welcome">Welcome</h1>
-    <p id="role"></p>
+
+    <!-- ================================================= -->
+    <!-- MAIN WEBSITE / GUEST DASHBOARD -->
+    <!-- ================================================= -->
+
+    <div id="guestSection">
 
 
-    <!-- USER -->
+        <!-- HERO -->
+
+        <section class="main-hero">
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    EMERGENCY MANAGEMENT SYSTEM
+                </span>
+
+                <h1>
+                    Disaster Management<br>
+                    & Emergency Support
+                </h1>
+
+                <p>
+                    Report emergencies, request assistance and
+                    stay informed about disaster situations.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="login.html"
+                       class="primary-button">
+                        🚨 Report a Disaster
+                    </a>
+
+                    <a href="login.html"
+                       class="secondary-button">
+                        🆘 Request Help
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-card-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Stay Safe. Stay Informed.
+                </h3>
+
+                <p>
+                    Quick access to disaster reporting,
+                    emergency assistance and volunteer support.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- HOW THE SYSTEM HELPS -->
+        <!-- ================================================= -->
+
+        <section class="info-section">
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🚨
+                </div>
+
+                <h3>
+                    Report a Disaster
+                </h3>
+
+                <p>
+                    Report disaster situations by providing
+                    important location and incident details.
+                </p>
+
+                <a href="login.html"
+                   class="card-link">
+                    Report Now →
+                </a>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🆘
+                </div>
+
+                <h3>
+                    Request Help
+                </h3>
+
+                <p>
+                    Request assistance when you or others
+                    are affected by a disaster.
+                </p>
+
+                <a href="login.html"
+                   class="card-link">
+                    Request Help →
+                </a>
+
+            </div>
+
+
+
+            <div class="info-card">
+
+                <div class="info-icon">
+                    🦺
+                </div>
+
+                <h3>
+                    Volunteer Support
+                </h3>
+
+                <p>
+                    Volunteers can assist affected people
+                    and complete assigned disaster tasks.
+                </p>
+
+                <a href="register.html"
+                   class="card-link">
+                    Join as Volunteer →
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- HELP BANNER -->
+        <!-- ================================================= -->
+
+        <section class="help-banner">
+
+            <div>
+
+                <span class="small-heading">
+                    EMERGENCY ASSISTANCE
+                </span>
+
+                <h2>
+                    Need help during a disaster?
+                </h2>
+
+                <p>
+                    Login to report an emergency or request
+                    assistance from the disaster management team.
+                </p>
+
+            </div>
+
+
+            <a href="login.html"
+               class="help-button">
+
+                Login to Continue →
+
+            </a>
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- ================================================= -->
+    <!-- USER DASHBOARD -->
+    <!-- ================================================= -->
 
     <div id="userSection">
 
-        <h2>User / Citizen Dashboard</h2>
+        <div class="dashboard-title">
 
-        <div class="grid">
+            <span class="small-heading">
+                USER DASHBOARD
+            </span>
 
-            <div class="card">
-                <h3>Report a Disaster</h3>
+            <h1 id="userWelcome">
+                Welcome
+            </h1>
+
+            <p>
+                Report disasters, request help and
+                stay updated with disaster information.
+            </p>
+
+        </div>
+
+
+        <div class="action-grid">
+
+
+            <!-- REPORT DISASTER -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon red-card">
+                    🚨
+                </div>
+
+                <h3>
+                    Report a Disaster
+                </h3>
+
+                <p>
+                    Report a disaster by providing its type,
+                    location and important details.
+                </p>
+
 
                 <form id="reportForm">
 
-                    <input type="text" id="disasterType"
-                           placeholder="Disaster type" required>
+                    <input type="text"
+                           id="disasterType"
+                           placeholder="Disaster type"
+                           required>
 
-                    <input type="text" id="location"
-                           placeholder="Location" required>
+                    <input type="text"
+                           id="location"
+                           placeholder="Location"
+                           required>
 
                     <textarea id="details"
                               placeholder="Enter disaster details"
                               required></textarea>
 
-                    <button type="submit">Report Disaster</button>
+                    <button type="submit">
+                        Submit Report
+                    </button>
 
                 </form>
 
-                <p id="reportMessage"></p>
+                <p id="reportMessage"
+                   class="message">
+                </p>
+
             </div>
 
 
-            <div class="card">
 
-                <h3>Request Help</h3>
+            <!-- REQUEST HELP -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon orange-card">
+                    🆘
+                </div>
+
+                <h3>
+                    Request Help
+                </h3>
+
+                <p>
+                    Request assistance by providing your
+                    location and describing the help required.
+                </p>
+
 
                 <form id="helpForm">
 
-                    <input type="text" id="helpLocation"
-                           placeholder="Your location" required>
+                    <input type="text"
+                           id="helpLocation"
+                           placeholder="Your location"
+                           required>
 
                     <textarea id="helpDetails"
                               placeholder="Describe the help required"
                               required></textarea>
 
-                    <button type="submit">Request Help</button>
+                    <button type="submit">
+                        Request Help
+                    </button>
 
                 </form>
 
-                <p id="helpMessage"></p>
+                <p id="helpMessage"
+                   class="message">
+                </p>
 
             </div>
 
 
-            <div class="card">
 
-                <h3>Disaster Information</h3>
+            <!-- DISASTER INFORMATION -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon blue-card">
+                    📢
+                </div>
+
+                <h3>
+                    Disaster Information
+                </h3>
+
+                <p>
+                    View current disaster reports and
+                    their latest status.
+                </p>
 
                 <div id="reports">
                     No reports available.
@@ -85,158 +387,508 @@
 
             </div>
 
+
         </div>
 
     </div>
 
 
-    <!-- VOLUNTEER -->
+
+    <!-- ================================================= -->
+    <!-- VOLUNTEER DASHBOARD -->
+    <!-- ================================================= -->
 
     <div id="volunteerSection">
 
-        <h2>Volunteer Dashboard</h2>
+        <div class="dashboard-title">
 
-        <div class="grid">
+            <span class="small-heading">
+                VOLUNTEER DASHBOARD
+            </span>
 
-            <div class="card">
-                <h3>Disaster Locations</h3>
+            <h1 id="volunteerWelcome">
+                Welcome
+            </h1>
 
-                <p>
-                    View locations where assistance
-                    is required.
-                </p>
-
-                <button onclick="showMessage('Volunteer locations displayed.')">
-                    View Locations
-                </button>
-            </div>
-
-
-            <div class="card">
-                <h3>Assigned Tasks</h3>
-
-                <p>
-                    View tasks assigned by the admin.
-                </p>
-
-                <button onclick="showMessage('Task status updated.')">
-                    Update Task
-                </button>
-            </div>
-
-
-            <div class="card">
-                <h3>Provide Assistance</h3>
-
-                <p>
-                    Provide assistance to affected people
-                    during disaster situations.
-                </p>
-
-                <button onclick="showMessage('Assistance updated successfully.')">
-                    Provide Assistance
-                </button>
-            </div>
+            <p>
+                Manage your availability, tasks and
+                disaster assistance activities.
+            </p>
 
         </div>
 
-        <p id="volunteerMessage"></p>
+
+        <div class="action-grid">
+
+
+            <!-- AVAILABILITY -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon green-card">
+                    🟢
+                </div>
+
+                <h3>
+                    My Availability
+                </h3>
+
+                <p>
+                    Let the admin know whether you are
+                    available to assist.
+                </p>
+
+                <div class="status-box">
+
+                    Current Status:
+                    <strong id="availabilityStatus">
+                        Available
+                    </strong>
+
+                </div>
+
+
+                <select id="availabilitySelect">
+
+                    <option value="Available">
+                        Available
+                    </option>
+
+                    <option value="Busy">
+                        Busy
+                    </option>
+
+                </select>
+
+
+                <button onclick="updateAvailability()">
+                    Update Availability
+                </button>
+
+                <p id="availabilityMessage"
+                   class="message">
+                </p>
+
+            </div>
+
+
+
+            <!-- DISASTER LOCATIONS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon blue-card">
+                    📍
+                </div>
+
+                <h3>
+                    Disaster Locations
+                </h3>
+
+                <p>
+                    View locations where disasters have
+                    been reported.
+                </p>
+
+                <button onclick="showVolunteerReports()">
+                    View Locations
+                </button>
+
+                <div id="volunteerReports"></div>
+
+            </div>
+
+
+
+            <!-- ASSIGNED TASKS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon purple-card">
+                    📋
+                </div>
+
+                <h3>
+                    Assigned Tasks
+                </h3>
+
+                <p>
+                    View tasks assigned to you by the admin
+                    and update their progress.
+                </p>
+
+                <button onclick="showVolunteerTasks()">
+                    View Tasks
+                </button>
+
+                <div id="volunteerTasks"></div>
+
+            </div>
+
+
+
+            <!-- RESOURCES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon orange-card">
+                    📦
+                </div>
+
+                <h3>
+                    Available Resources
+                </h3>
+
+                <p>
+                    View relief materials and resources
+                    available for disaster assistance.
+                </p>
+
+                <button onclick="showVolunteerResources()">
+                    View Resources
+                </button>
+
+                <div id="volunteerResources"></div>
+
+            </div>
+
+
+        </div>
 
     </div>
 
 
-    <!-- ADMIN -->
+
+    <!-- ================================================= -->
+    <!-- ADMIN DASHBOARD -->
+    <!-- ================================================= -->
 
     <div id="adminSection">
 
-        <h2>Admin Dashboard</h2>
+        <div class="dashboard-title">
 
-        <div class="grid">
+            <span class="small-heading">
+                ADMIN DASHBOARD
+            </span>
 
-            <div class="card">
-                <h3>Reported Disasters</h3>
+            <h1>
+                Disaster Management Control Panel
+            </h1>
+
+            <p>
+                Monitor disaster reports, coordinate volunteers,
+                assign tasks and manage resources.
+            </p>
+
+        </div>
+
+
+        <!-- ADMIN STATISTICS -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon red-card">
+                    🚨
+                </div>
+
+                <div>
+
+                    <h3 id="totalReports">
+                        0
+                    </h3>
+
+                    <p>
+                        Disaster Reports
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon green-card">
+                    🦺
+                </div>
+
+                <div>
+
+                    <h3 id="totalVolunteers">
+                        0
+                    </h3>
+
+                    <p>
+                        Volunteers
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon purple-card">
+                    📋
+                </div>
+
+                <div>
+
+                    <h3 id="totalTasks">
+                        0
+                    </h3>
+
+                    <p>
+                        Assigned Tasks
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon orange-card">
+                    📦
+                </div>
+
+                <div>
+
+                    <h3 id="totalResources">
+                        0
+                    </h3>
+
+                    <p>
+                        Resources
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ADMIN ACTIONS -->
+
+        <div class="admin-grid">
+
+
+            <!-- REPORTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon red-card">
+                    🚨
+                </div>
+
+                <h3>
+                    Reported Disasters
+                </h3>
 
                 <p>
-                    View disaster reports submitted by users.
+                    View all disaster reports and update
+                    their current status.
                 </p>
 
                 <button onclick="showAdminReports()">
                     View Reports
                 </button>
+
+                <div id="adminReports"></div>
+
             </div>
 
 
-            <div class="card">
-                <h3>Affected Areas</h3>
+
+            <!-- VOLUNTEERS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon green-card">
+                    🦺
+                </div>
+
+                <h3>
+                    Volunteer Availability
+                </h3>
 
                 <p>
-                    Manage areas affected by disasters.
-                </p>
-
-                <button onclick="showMessage('Affected areas section opened.')">
-                    Manage Areas
-                </button>
-            </div>
-
-
-            <div class="card">
-                <h3>Resources</h3>
-
-                <p>
-                    Manage relief materials and resources.
-                </p>
-
-                <button onclick="showMessage('Resource section opened.')">
-                    Manage Resources
-                </button>
-            </div>
-
-
-            <div class="card">
-                <h3>Volunteers</h3>
-
-                <p>
-                    View and coordinate registered volunteers.
+                    View registered volunteers and
+                    their current availability.
                 </p>
 
                 <button onclick="showVolunteers()">
-                    Manage Volunteers
+                    View Volunteers
                 </button>
+
+                <div id="volunteerList"></div>
+
             </div>
 
 
-            <div class="card">
 
-                <h3>Update Disaster Status</h3>
+            <!-- ASSIGN TASK -->
 
-                <select id="status">
-                    <option>Reported</option>
-                    <option>Under Action</option>
-                    <option>Assistance Provided</option>
-                    <option>Resolved</option>
+            <div class="dashboard-card">
+
+                <div class="card-icon purple-card">
+                    📋
+                </div>
+
+                <h3>
+                    Assign Task
+                </h3>
+
+                <p>
+                    Assign disaster-response tasks
+                    to registered volunteers.
+                </p>
+
+                <input type="text"
+                       id="taskDescription"
+                       placeholder="Enter task">
+
+                <input type="text"
+                       id="taskLocation"
+                       placeholder="Task location">
+
+                <select id="taskVolunteer">
+
+                    <option value="">
+                        Select Volunteer
+                    </option>
+
                 </select>
 
-                <button onclick="updateStatus()">
-                    Update Status
+                <button onclick="assignTask()">
+                    Assign Task
                 </button>
 
+                <p id="taskMessage"
+                   class="message">
+                </p>
+
             </div>
 
-        </div>
 
-        <div class="card admin-info">
-            <h3>Admin Information</h3>
-            <div id="adminInfo">
-                Admin can manage reports, resources,
-                affected areas and volunteers.
+
+            <!-- RESOURCES -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon orange-card">
+                    📦
+                </div>
+
+                <h3>
+                    Manage Resources
+                </h3>
+
+                <p>
+                    Add and manage relief materials
+                    available for disaster response.
+                </p>
+
+                <input type="text"
+                       id="resourceName"
+                       placeholder="Resource name">
+
+                <input type="number"
+                       id="resourceQuantity"
+                       placeholder="Quantity">
+
+                <button onclick="addResource()">
+                    Add Resource
+                </button>
+
+                <div id="adminResources"></div>
+
             </div>
+
+
+
+            <!-- ACCOUNTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon blue-card">
+                    👥
+                </div>
+
+                <h3>
+                    Registered Accounts
+                </h3>
+
+                <p>
+                    View registered users and volunteers
+                    in the system.
+                </p>
+
+                <button onclick="showAccounts()">
+                    View Accounts
+                </button>
+
+                <div id="accountsList"></div>
+
+            </div>
+
+
         </div>
 
     </div>
 
+
 </div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                🚨 Disaster Management System
+            </h3>
+
+            <p>
+                A simple platform for disaster reporting,
+                assistance and volunteer coordination.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <p>
+                © 2026 Disaster Management System
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
